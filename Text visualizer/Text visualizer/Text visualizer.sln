@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text visualizer", "Text visualizer\Text visualizer.csproj", "{4CEF9189-C53D-4A23-81B1-54766C458FD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawer", "Drawer\Drawer.csproj", "{4EF2F57D-9612-4276-BF89-AEF6F458E12E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingAppDomains", "UsingAppDomains\UsingAppDomains.csproj", "{4C7EA263-7E09-40B3-8908-0F90346E4CAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CEF9189-C53D-4A23-81B1-54766C458FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CEF9189-C53D-4A23-81B1-54766C458FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CEF9189-C53D-4A23-81B1-54766C458FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CEF9189-C53D-4A23-81B1-54766C458FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF2F57D-9612-4276-BF89-AEF6F458E12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF2F57D-9612-4276-BF89-AEF6F458E12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF2F57D-9612-4276-BF89-AEF6F458E12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF2F57D-9612-4276-BF89-AEF6F458E12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C7EA263-7E09-40B3-8908-0F90346E4CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C7EA263-7E09-40B3-8908-0F90346E4CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C7EA263-7E09-40B3-8908-0F90346E4CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C7EA263-7E09-40B3-8908-0F90346E4CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
