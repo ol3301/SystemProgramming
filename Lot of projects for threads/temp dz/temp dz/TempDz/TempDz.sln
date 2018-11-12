@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempDz", "TempDz\TempDz.csproj", "{01A3B606-7D81-4FEB-9938-456B9BAAF611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeProcesses", "TreeProcess\TreeProcesses\TreeProcesses.csproj", "{F0B86862-DAF5-4668-A931-F7B34ED0C4BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domen", "Domen", "{F3BF9E6D-F39C-4A6A-AE2D-B4D5790FD30B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawer", "Drawer\Drawer.csproj", "{E056F5A0-36E5-44CE-83F2-259368747964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initiator", "Initiator\Initiator.csproj", "{F36C9D31-D7DE-4F29-9BED-68591A2D6C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunDomens", "RunDomens\RunDomens.csproj", "{D7FE2863-D91D-48B5-958D-4EF825E7A407}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01A3B606-7D81-4FEB-9938-456B9BAAF611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A3B606-7D81-4FEB-9938-456B9BAAF611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A3B606-7D81-4FEB-9938-456B9BAAF611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A3B606-7D81-4FEB-9938-456B9BAAF611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B86862-DAF5-4668-A931-F7B34ED0C4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B86862-DAF5-4668-A931-F7B34ED0C4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B86862-DAF5-4668-A931-F7B34ED0C4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B86862-DAF5-4668-A931-F7B34ED0C4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E056F5A0-36E5-44CE-83F2-259368747964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E056F5A0-36E5-44CE-83F2-259368747964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E056F5A0-36E5-44CE-83F2-259368747964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E056F5A0-36E5-44CE-83F2-259368747964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36C9D31-D7DE-4F29-9BED-68591A2D6C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36C9D31-D7DE-4F29-9BED-68591A2D6C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36C9D31-D7DE-4F29-9BED-68591A2D6C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36C9D31-D7DE-4F29-9BED-68591A2D6C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7FE2863-D91D-48B5-958D-4EF825E7A407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FE2863-D91D-48B5-958D-4EF825E7A407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FE2863-D91D-48B5-958D-4EF825E7A407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7FE2863-D91D-48B5-958D-4EF825E7A407}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E056F5A0-36E5-44CE-83F2-259368747964} = {F3BF9E6D-F39C-4A6A-AE2D-B4D5790FD30B}
+		{F36C9D31-D7DE-4F29-9BED-68591A2D6C5F} = {F3BF9E6D-F39C-4A6A-AE2D-B4D5790FD30B}
+		{D7FE2863-D91D-48B5-958D-4EF825E7A407} = {F3BF9E6D-F39C-4A6A-AE2D-B4D5790FD30B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {967331D1-24F4-4297-A17D-5BB56CCE99D8}
+	EndGlobalSection
+EndGlobal
