@@ -30,7 +30,7 @@ namespace FinderFiles
                 {
                     firstload[new WeakReference(d)]= true;
                     border.Loaded -= rout;
-                    DoAnimation.FromLeftToRight(border, false);
+                    DoAnimation.FromLeftToRight(border, false,true);
                 };
 
                 border.Loaded += rout;

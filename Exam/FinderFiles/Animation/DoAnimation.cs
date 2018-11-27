@@ -11,7 +11,7 @@ namespace FinderFiles
 {
     public static class DoAnimation
     {
-        public static void FromLeftToRight(FrameworkElement d,bool value)
+        public static async void FromLeftToRight(FrameworkElement d,bool value,bool isfirst=false)
         {
             var sb = new Storyboard();
 
@@ -33,7 +33,15 @@ namespace FinderFiles
             Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
             sb.Children.Add(animation);
 
+            if (isfirst)
+                d.Visibility = Visibility.Hidden;
+
             sb.Begin(d);
+
+            await Task.Delay(200);
+
+            if (isfirst)
+                d.Visibility = Visibility.Visible;
         }
     }
 }

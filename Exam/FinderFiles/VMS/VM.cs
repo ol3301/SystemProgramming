@@ -27,6 +27,8 @@ namespace FinderFiles
         public ObservableCollection<DetectedFile> DetectedFiles => finder.DetectedFiles;
         public ObservableCollection<string> Log                 => finder.Log;
         public string ScanPath                                  => finder.ScanPath;
+        public int Pos                                          => finder.Pos;
+        public int Max                                          => finder.Max;
 
 
         public DelegateCommand Start
@@ -64,7 +66,7 @@ namespace FinderFiles
         private DelegateCommand _showMenu;
         private DelegateCommand _chooseCensorship;
         private DelegateCommand _chooseNotCensorship;
-
+        private DelegateCommand _saveToFile;
 
         public DelegateCommand<string> AddWordCommand { get; set; }
 
@@ -94,7 +96,15 @@ namespace FinderFiles
                 IsStart = IsStart ? false : true;
             }));
         }
-
+        public DelegateCommand SaveToFile
+        {
+            get => _saveToFile ?? (_saveToFile = new DelegateCommand(() =>
+            {
+                using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+                    if (fbd.ShowDialog() == DialogResult.OK)
+                        finder.SaveToFile(fbd.SelectedPath);
+            }));
+        }
 
         //анимируем меню слева(выдвигается)
         public bool IsStart

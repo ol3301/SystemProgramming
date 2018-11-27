@@ -7,6 +7,16 @@ namespace FinderFiles
     {
         public FileInfo File { get; set; }
         public List<SpecificWord> ForbiddenWords {get;set;}
+        public int Count
+        {
+            get
+            {
+                int count=0;
+                foreach (var i in ForbiddenWords)
+                    count += i.Repetitions;
+                return count;
+            }
+        }
 
         public DetectedFile(string path)
         {

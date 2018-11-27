@@ -78,7 +78,6 @@
     <Compile Include="Animation\BorderAnimate.cs" />
     <Compile Include="Animation\DoAnimation.cs" />
     <Compile Include="VMS\VM.cs" />
-    <Compile Include="WordToStringConverter.cs" />
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

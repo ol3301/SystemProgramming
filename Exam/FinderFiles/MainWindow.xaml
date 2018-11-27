@@ -6,17 +6,13 @@
         xmlns:local="clr-namespace:FinderFiles"
         xmlns:design="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Поиск запрещенных слов на дисках" Height="340.401" Width="606.782"
+        Title="Поиск запрещенных слов на дисках" Height="340.401" Width="689.982"
         WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
         <local:VM/>
     </Window.DataContext>
 
-    <Window.Resources>
-        <local:WordToStringConverter x:Key="WordToString"/>
-    </Window.Resources>
-    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -45,6 +41,8 @@
 
                     <Border Margin="60 0 0 0" Background="Bisque">
                         <StackPanel Orientation="Horizontal">
+                            <Button Content="+" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Сохранить в файл"
+                                    Command="{Binding SaveToFile}"/>
                             <Button Style="{StaticResource MaterialDesignFlatButton}"  Margin="0 0 10 0"
                             Content="Запустить" Command="{Binding Start}"/>
                             <Button Style="{StaticResource MaterialDesignFlatButton}"  Margin="0 0 10 0"
@@ -64,11 +62,11 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <DataGrid Grid.Row="1" ItemsSource="{Binding DetectedFiles}" AutoGenerateColumns="False">
+                        <DataGrid IsReadOnly="True" Grid.Row="1" ItemsSource="{Binding DetectedFiles}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Название файла" Binding="{Binding File.Name}"/>
                                 <DataGridTextColumn Header="Размер" Binding="{Binding File.Length}"/>
-                                <DataGridTextColumn Header="Запрещенных слов" Binding="{Binding ForbiddenWords.Count}"/>
+                                <DataGridTextColumn Header="Запрещенных слов" Binding="{Binding Count}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
@@ -88,8 +86,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Лог программы"/>
-                <ListBox Grid.Row="1" ItemsSource="{Binding Log}"/>
-                <ProgressBar Grid.Row="2"/>
+                <ListBox x:Name="listb" Grid.Row="1" ItemsSource="{Binding Log}" ScrollViewer.ScrollChanged="Listb_ScrollChanged"/>
+                <ProgressBar Grid.Row="2" Maximum="{Binding Max}" Value="{Binding Pos,Mode=OneWay}"/>
             </Grid>
 
         </Grid>
@@ -126,14 +124,14 @@
                         <!--Text="{Binding CensorshipPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>-->
                         <TextBox Grid.Column="0" Grid.Row="0" Margin="0 0 10 0"
                                  TextWrapping="NoWrap"
-                                 Text="D:\Exam Result find\Censorship"/>
+                                 Text="{Binding CensorshipPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
                         <Button Grid.Column="1" Grid.Row="0" Content="+" Margin="10 0 0 0" Command="{Binding ChooseCensorship}"/>
 
                         <TextBlock Grid.Column="0" Grid.Row="1" Text="Папка для зацензуриных файлов" TextWrapping="Wrap"/>
                         <!--Text="{Binding NotCensorshipPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"-->
                         <TextBox Grid.Column="0" Grid.Row="2"
-                                 Text="D:\Exam Result find\NotCensorship"/>
+                                 Text="{Binding NotCensorshipPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"/>
                         <Button Grid.Row="2" Grid.Column="2" Content="+" Margin="10 0 0 0" Command="{Binding ChooseNotCensorship}"/>
 
                         <TextBlock Grid.Column="0" Grid.Row="3" Text="Добавьте запрещенные слова" TextWrapping="Wrap"/>
@@ -142,17 +140,15 @@
                         <Button Content="+" Grid.Column="1" Grid.Row="4" Margin="10 0 0 0" 
                                 Command="{Binding AddWordCommand}"
                                 CommandParameter="{Binding ElementName=ElemName,Path=Text}"/>
-                        <ComboBox Grid.ColumnSpan="2" Grid.Row="5" ItemsSource="{Binding Words,
-                            Converter={StaticResource WordToString}}"/>
+                        <ComboBox Grid.ColumnSpan="2" Grid.Row="5" ItemsSource="{Binding Words}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </Grid>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="117*" />
-                            <ColumnDefinition Width="23*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
                 </StackPanel>
 
                 <!--Инфа о разрабе и кнопка сохранить-->
