@@ -148,7 +148,6 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </Grid>
-
                 </StackPanel>
 
                 <!--Инфа о разрабе и кнопка сохранить-->
